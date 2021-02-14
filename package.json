@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/PhilbertLou/Live-Tierlist/issues"
   },
-  "homepage": "https://github.com/PhilbertLou/Live-Tierlist#readme"
+  "homepage": "https://github.com/PhilbertLou/Live-Tierlist#readme",
+  "dependencies": {
+    "socket.io": "^3.1.1"
+  }
 }
