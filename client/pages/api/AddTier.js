@@ -1,4 +1,4 @@
-export default function Hello() {
+export default function AddTier() {
   return (
     <div>
         <p>TEST2!</p>
