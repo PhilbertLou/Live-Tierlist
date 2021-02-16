@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Droppable } from 'react-beautiful-dnd';
-import Task from './task';
+import Task from './Task';
 
 const Container = styled.div`
   margin: 8px;
   border: 1px solid lightgrey;
   border-radius: 2px;
-
   display:flex;
   flex-direction:row;
 `;

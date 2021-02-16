@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '@atlaskit/css-reset';
 import { DragDropContext } from 'react-beautiful-dnd';
-import initialData from './initial-data';
+import InitialData from './Initial-data';
 import styled from 'styled-components';
-import Column from './column';
+import Column from './Column';
 
-class App extends React.Component {
-  state = initialData;
+class Main extends React.Component {
+  state = InitialData;
 
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
@@ -62,24 +62,22 @@ class App extends React.Component {
     }
     this.setState(newState);
 
-  
-      
-
 }
-
 
 render() {
   return (
-    <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
-      {this.state.columnOrder.map(columnId => {
-        const column = this.state.columns[columnId];
-        const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
+    <div>
+        <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
+        {this.state.columnOrder.map(columnId => {
+            const column = this.state.columns[columnId];
+            const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
 
-        return <Column key={column.id} column={column} tasks={tasks} />;
-      })}
-    </DragDropContext>
+            return <Column key={column.id} column={column} tasks={tasks} />;
+        })}
+        </DragDropContext>
+    </div>
   );
 }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default Main;
